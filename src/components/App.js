@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="page">
       <header className="header">
-        <img src={logo} alt="Rick and Morty logo" />
+        <img className="header_logo" src={logo} alt="Rick and Morty logo" />
       </header>
       <main className="main">
         <form action="">
