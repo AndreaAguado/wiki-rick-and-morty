@@ -45,7 +45,10 @@ function App() {
           </ul>
         </section>
       </main>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <small className="footer_small"> &copy; Andrea Aguado 2021</small>
+
+      </footer>
     </div>
   );
 }
