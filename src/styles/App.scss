@@ -1,5 +1,6 @@
 @import "./core/reset.scss";
+@import "./core/variables.scss";
 .page {
-  background-color: black;
+  background-color: $page_background;
   height: 100vh;
 }
