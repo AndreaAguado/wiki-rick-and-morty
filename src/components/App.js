@@ -20,9 +20,11 @@ function App() {
     return charactersData.map((character) => {
       return (
         <li key={character.id} id={character.id} className="character_card">
-          <img src={character.photo} alt={character.name} />
-          <p>{character.name}</p>
-          <p>{character.species}</p>
+          <img className="character_img" src={character.photo} alt={character.name} />
+          <div className="character_info">
+            <p className="info_item">{character.name}</p>
+            <p className="info_item">{character.species}</p>
+          </div>
         </li>
       )
     })
@@ -35,16 +37,11 @@ function App() {
       </header>
       <main className="main">
         <form action="">
-          <input type="text" />
+          <input className="text_input" type="text" />
         </form>
-        <section className="characters_list">
-          <ul>
+        <section >
+          <ul className="characters_list">
             {renderCharacters()}
-            {/* <li className="character_card">
-              <img src="" alt="" />
-              <p>Name: </p>
-              <p>Species: </p>
-            </li> */}
           </ul>
         </section>
       </main>
