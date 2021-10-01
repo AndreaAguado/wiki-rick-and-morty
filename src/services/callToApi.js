@@ -8,7 +8,8 @@ const callToApi = () => {
                     return {
                         photo: character.image,
                         name: character.name,
-                        species: character.species
+                        species: character.species,
+                        id: character.id
                     }
                 })
             })

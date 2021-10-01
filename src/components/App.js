@@ -16,6 +16,18 @@ function App() {
     });
   }, []);
 
+  const renderCharacters = () => {
+    return charactersData.map((character) => {
+      return (
+        <li key={character.id} id={character.id} className="character_card">
+          <img src={character.photo} alt={character.name} />
+          <p>{character.name}</p>
+          <p>{character.species}</p>
+        </li>
+      )
+    })
+  }
+
   return (
     <div className="page">
       <header className="header">
@@ -25,6 +37,16 @@ function App() {
         <form action="">
           <input type="text" />
         </form>
+        <section className="characters_list">
+          <ul>
+            {renderCharacters()}
+            {/* <li className="character_card">
+              <img src="" alt="" />
+              <p>Name: </p>
+              <p>Species: </p>
+            </li> */}
+          </ul>
+        </section>
       </main>
       <footer className="footer"></footer>
     </div>
