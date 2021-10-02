@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const [charactersData, setCharactersData] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     callToApi().then(response => {
@@ -17,7 +18,10 @@ function App() {
   }, []);
 
   const renderCharacters = () => {
-    return charactersData.map((character) => {
+    const filteredData = charactersData.filter((character) => {
+      return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+    })
+    return filteredData.map((character) => {
       return (
         <li key={character.id} id={character.id} className="character_card">
           <img className="character_img" src={character.photo} alt={character.name} />
@@ -30,6 +34,11 @@ function App() {
     })
   }
 
+  const handleSearch = (ev) => {
+    ev.preventDefault();
+    setSearch(ev.target.value);
+  }
+
   return (
     <div className="page">
       <header className="header">
@@ -37,7 +46,7 @@ function App() {
       </header>
       <main className="main">
         <form action="">
-          <input className="text_input" type="text" />
+          <input onKeyUp={handleSearch} className="text_input" type="text" />
         </form>
         <section >
           <ul className="characters_list">
