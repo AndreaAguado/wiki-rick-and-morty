@@ -48,7 +48,7 @@ function App() {
         <form action="">
           <input onKeyUp={handleSearch} className="text_input" type="text" />
         </form>
-        <section >
+        <section className="characters_list_section" >
           <ul className="characters_list">
             {renderCharacters()}
           </ul>
