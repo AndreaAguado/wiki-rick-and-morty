@@ -10,7 +10,7 @@ const CharacterDetail = (props) => {
                     <p>Status: {props.character.status} </p>
                     <p>Species: {props.character.species} </p>
                     <p>Origin: {props.character.origin} </p>
-                    <p>Episodes: {props.character.episodes} </p>
+                    <p>Episodes: {(props.character.episodes).length} </p>
                 </div>
             </article>
         </div >

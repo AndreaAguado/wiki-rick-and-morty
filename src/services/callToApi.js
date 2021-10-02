@@ -12,7 +12,7 @@ const callToApi = () => {
                         id: character.id,
                         status: character.status,
                         origin: character.origin.name,
-                        episodes: character.episodes
+                        episodes: character.episode
                     }
                 })
             })
