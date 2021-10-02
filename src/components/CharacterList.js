@@ -8,10 +8,28 @@ const CharacterList = (props) => {
             </li >
         )
     })
+
+    const message = () => {
+        if (html.length < 1) {
+            return <p className="warning_message">No existen resultados para la búsqueda: "{props.search}" </p>
+        }
+        else {
+            return (
+                <ul className="characters_list">
+                    {html}
+                </ul>
+            )
+        }
+    }
+
     return (
-        <ul className="characters_list">
-            {html}
-        </ul>
+        <>
+            {message()}
+            {/* <ul className="characters_list">
+                {html}
+            </ul> */}
+        </>
+
     )
 }
 export default CharacterList;

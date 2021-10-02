@@ -50,7 +50,7 @@ function App() {
           <main className="main">
             <Filters handleSearch={handleSearch}></Filters>
             <section className="characters_list_section" >
-              <CharacterList filteredData={filteredData}></CharacterList>
+              <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
           </main>
           <Footer></Footer>
