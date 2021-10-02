@@ -1,8 +1,9 @@
 import '../styles/layout/CharacterDetail.scss';
+import { Link } from 'react-router-dom';
 const CharacterDetail = (props) => {
     return (
         <div className="character_detail">
-            <button className="return_button">Volver</button>
+            <Link to="/"><button className="return_button">Volver</button></Link>
             <article className="character_card">
                 <img src={props.character.photo} alt={props.character.name} />
                 <div className="character_info">
