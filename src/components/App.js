@@ -48,9 +48,6 @@ function App() {
       </header>
       <main className="main">
         <Filters handleSearch={handleSearch}></Filters>
-        {/* <form action="">
-          <input onKeyUp={handleSearch} className="text_input" type="text" />
-        </form> */}
         <section className="characters_list_section" >
           <ul className="characters_list">
             {renderCharacters()}
