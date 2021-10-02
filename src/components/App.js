@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 import Filters from './Filters';
 import CharacterList from './CharacterList';
+import CharacterCard from './CharacterCard';
 
 function App() {
 
@@ -26,13 +27,7 @@ function App() {
     })
     return filteredData.map((character) => {
       return (
-        <li key={character.id} id={character.id} className="character_card">
-          <img className="character_img" src={character.photo} alt={character.name} />
-          <div className="character_info">
-            <p className="info_item">{character.name}</p>
-            <p className="info_item">{character.species}</p>
-          </div>
-        </li>
+        <CharacterCard character={character}></CharacterCard>
       )
     })
   }
