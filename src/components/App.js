@@ -10,6 +10,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
 
@@ -60,10 +61,11 @@ function App() {
           </Route>
         </Switch>
       </main>
-      <footer className="footer">
+      <Footer></Footer>
+      {/* <footer className="footer">
         <small className="footer_small"> &copy; Andrea Aguado 2021</small>
 
-      </footer>
+      </footer> */}
     </div>
   );
 }
