@@ -1,5 +1,4 @@
 import '../styles/App.scss';
-import logo from '../images/Rick_and_Morty_logo.png';
 
 import callToApi from '../services/callToApi';
 
@@ -9,8 +8,8 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Filters from './Filters';
 import CharacterList from './CharacterList';
-import CharacterCard from './CharacterCard';
 import CharacterDetail from './CharacterDetail';
+import Header from './Header';
 
 function App() {
 
@@ -43,9 +42,10 @@ function App() {
 
   return (
     <div className="page">
-      <header className="header">
+      <Header></Header>
+      {/* <header className="header">
         <img className="header_logo" src={logo} alt="Rick and Morty logo" />
-      </header>
+      </header> */}
       <main className="main">
         <Filters handleSearch={handleSearch}></Filters>
         <section className="characters_list_section" >
