@@ -11,6 +11,7 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
 import Footer from './Footer';
+import Main from './Main';
 
 function App() {
 
@@ -47,12 +48,12 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Header></Header>
-          <main className="main">
+          <Main>
             <Filters handleSearch={handleSearch}></Filters>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
-          </main>
+          </Main>
           <Footer></Footer>
         </Route>
         <Route path='/character/:id'>
