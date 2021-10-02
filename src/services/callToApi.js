@@ -9,13 +9,16 @@ const callToApi = () => {
                         photo: character.image,
                         name: character.name,
                         species: character.species,
-                        id: character.id
+                        id: character.id,
+                        status: character.status,
+                        origin: character.origin.name,
+                        episodes: character.episodes
                     }
                 })
             })
     )
 }
-const objectToExport = {
-    callToApi: callToApi
-};
+// const objectToExport = {
+//     callToApi: callToApi
+// };
 export default callToApi;

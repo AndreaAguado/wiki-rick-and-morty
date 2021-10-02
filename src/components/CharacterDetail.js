@@ -1,6 +1,6 @@
 const CharacterDetail = (props) => {
     return (
-        <>
+        <div>
             <button>Volver</button>
             <article>
                 <img src={props.character.photo} alt={props.character.name} />
@@ -12,7 +12,7 @@ const CharacterDetail = (props) => {
                     <p>Episodes: {props.character.episodes} </p>
                 </div>
             </article>
-        </>
+        </div>
     )
 }
 export default CharacterDetail;

@@ -24,16 +24,10 @@ function App() {
     });
   }, []);
 
-  const renderCharacters = () => {
-    const filteredData = charactersData.filter((character) => {
-      return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
-    })
-    return filteredData.map((character) => {
-      return (
-        <CharacterCard character={character}></CharacterCard>
-      )
-    })
-  }
+
+  const filteredData = charactersData.filter((character) => {
+    return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+  })
 
   const handleSearch = (ev) => {
     ev.preventDefault();
@@ -41,10 +35,10 @@ function App() {
   }
 
   const routeData = useRouteMatch('/character/:id');
+  console.log(routeData);
   const characterId = routeData !== null ? routeData.params.id : '';
-
-  const clickedCharacter = charactersData.find((character) => character.id === characterId);
-
+  console.log(characterId);
+  const clickedCharacter = charactersData.find((character) => character.id === parseInt(characterId));
   console.log(clickedCharacter);
 
   return (
@@ -54,12 +48,9 @@ function App() {
       </header>
       <main className="main">
         <Filters handleSearch={handleSearch}></Filters>
-        <CharacterList renderCharacters={renderCharacters}></CharacterList>
-        {/* <section className="characters_list_section" >
-          <ul className="characters_list">
-            {renderCharacters()}
-          </ul>
-        </section> */}
+        <section className="characters_list_section" >
+          <CharacterList filteredData={filteredData}></CharacterList>
+        </section>
         <Switch>
           <Route exact path='/'>
 
