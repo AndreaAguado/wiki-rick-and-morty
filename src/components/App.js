@@ -6,6 +6,7 @@ import callToApi from '../services/callToApi';
 import { useState, useEffect } from 'react';
 
 import Filters from './Filters';
+import CharacterList from './CharacterList';
 
 function App() {
 
@@ -48,11 +49,12 @@ function App() {
       </header>
       <main className="main">
         <Filters handleSearch={handleSearch}></Filters>
-        <section className="characters_list_section" >
+        <CharacterList renderCharacters={renderCharacters}></CharacterList>
+        {/* <section className="characters_list_section" >
           <ul className="characters_list">
             {renderCharacters()}
           </ul>
-        </section>
+        </section> */}
       </main>
       <footer className="footer">
         <small className="footer_small"> &copy; Andrea Aguado 2021</small>
