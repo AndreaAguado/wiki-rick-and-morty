@@ -11,7 +11,7 @@ const CharacterList = (props) => {
 
     const message = () => {
         if (html.length < 1) {
-            return <p className="warning_message">No existen resultados para la búsqueda: "{props.search}" </p>
+            return <p className="warning_message">No existen personajes que coincidan con : "{props.search}" </p>
         }
         else {
             return (
