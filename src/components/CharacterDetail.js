@@ -1,8 +1,9 @@
+import '../styles/layout/CharacterDetail.scss';
 const CharacterDetail = (props) => {
     return (
-        <div>
-            <button>Volver</button>
-            <article>
+        <div className="character_detail">
+            <button className="return_button">Volver</button>
+            <article className="character_card">
                 <img src={props.character.photo} alt={props.character.name} />
                 <div className="character_info">
                     <h3>{props.character.name}</h3>
@@ -12,7 +13,7 @@ const CharacterDetail = (props) => {
                     <p>Episodes: {props.character.episodes} </p>
                 </div>
             </article>
-        </div>
+        </div >
     )
 }
 export default CharacterDetail;
