@@ -5,6 +5,8 @@ import callToApi from '../services/callToApi';
 
 import { useState, useEffect } from 'react';
 
+import Filters from './Filters';
+
 function App() {
 
   const [charactersData, setCharactersData] = useState([]);
@@ -45,9 +47,10 @@ function App() {
         <img className="header_logo" src={logo} alt="Rick and Morty logo" />
       </header>
       <main className="main">
-        <form action="">
+        <Filters handleSearch={handleSearch}></Filters>
+        {/* <form action="">
           <input onKeyUp={handleSearch} className="text_input" type="text" />
-        </form>
+        </form> */}
         <section className="characters_list_section" >
           <ul className="characters_list">
             {renderCharacters()}
