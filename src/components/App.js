@@ -3,11 +3,12 @@ import logo from '../images/Rick_and_Morty_logo.png';
 
 import callToApi from '../services/callToApi';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Switch, Route, useRouteMatch } from 'react';
 
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterCard from './CharacterCard';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
 
@@ -37,6 +38,13 @@ function App() {
     setSearch(ev.target.value);
   }
 
+  // const routeData = useRouteMatch('/character/:id');
+  // const characterId = routeData !== null ? routeData.params.id : '';
+
+  // const clickedCharacter = charactersData.find((character) => character.id === characterId);
+
+  // console.log(clickedCharacter);
+
   return (
     <div className="page">
       <header className="header">
@@ -50,6 +58,14 @@ function App() {
             {renderCharacters()}
           </ul>
         </section> */}
+        {/* <Switch>
+          <Route exact path='/'>
+
+          </Route>
+          <Route path='/character/:id'>
+            <CharacterDetail character={clickedCharacter}></CharacterDetail>
+          </Route>
+        </Switch> */}
       </main>
       <footer className="footer">
         <small className="footer_small"> &copy; Andrea Aguado 2021</small>
