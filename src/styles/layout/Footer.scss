@@ -9,4 +9,8 @@
   justify-content: end;
   align-items: flex-end;
   padding: 0 20px 20px 0;
+  .github_icon {
+    margin-left: 10px;
+    color: $primary_color;
+  }
 }
