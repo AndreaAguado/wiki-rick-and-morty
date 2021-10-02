@@ -43,29 +43,24 @@ function App() {
 
   return (
     <div className="page">
-      <Header></Header>
-      {/* <header className="header">
-        <img className="header_logo" src={logo} alt="Rick and Morty logo" />
-      </header> */}
-      <main className="main">
-        <Filters handleSearch={handleSearch}></Filters>
-        <section className="characters_list_section" >
-          <CharacterList filteredData={filteredData}></CharacterList>
-        </section>
-        <Switch>
-          <Route exact path='/'>
 
-          </Route>
-          <Route path='/character/:id'>
-            <CharacterDetail character={clickedCharacter}></CharacterDetail>
-          </Route>
-        </Switch>
-      </main>
-      <Footer></Footer>
-      {/* <footer className="footer">
-        <small className="footer_small"> &copy; Andrea Aguado 2021</small>
-
-      </footer> */}
+      <Switch>
+        <Route exact path='/'>
+          <Header></Header>
+          <main className="main">
+            <Filters handleSearch={handleSearch}></Filters>
+            <section className="characters_list_section" >
+              <CharacterList filteredData={filteredData}></CharacterList>
+            </section>
+          </main>
+          <Footer></Footer>
+        </Route>
+        <Route path='/character/:id'>
+          <Header></Header>
+          <CharacterDetail character={clickedCharacter}></CharacterDetail>
+          <Footer></Footer>
+        </Route>
+      </Switch>
     </div>
   );
 }
