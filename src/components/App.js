@@ -17,6 +17,7 @@ function App() {
 
   const [charactersData, setCharactersData] = useState([]);
   const [search, setSearch] = useState('');
+  // const [lastSearch, setLastSearch] = useState('');
 
   useEffect(() => {
     callToApi().then(response => {
@@ -30,10 +31,15 @@ function App() {
     return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
   })
 
-  const handleSearch = (ev) => {
-    ev.preventDefault();
-    setSearch(ev.target.value);
+  const handleSearch = (value) => {
+    // ev.preventDefault();
+    setSearch(value);
   }
+
+  // const handleLastSearch = (ev) => {
+  //   ev.preventDefault();
+  //   setLastSearch(search);
+  // }
 
   const routeData = useRouteMatch('/character/:id');
   console.log(routeData);
@@ -49,7 +55,10 @@ function App() {
         <Route exact path='/'>
           <Header></Header>
           <Main>
-            <Filters handleSearch={handleSearch}></Filters>
+            <Filters
+              // lastSearch={lastSearch} 
+              search={search}
+              handleSearch={handleSearch}></Filters>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
@@ -58,7 +67,9 @@ function App() {
         </Route>
         <Route path='/character/:id'>
           <Header></Header>
-          <CharacterDetail character={clickedCharacter}></CharacterDetail>
+          <CharacterDetail
+            // handleLastSearch={handleLastSearch} 
+            character={clickedCharacter}></CharacterDetail>
           <Footer></Footer>
         </Route>
       </Switch>

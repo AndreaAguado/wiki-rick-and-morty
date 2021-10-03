@@ -5,7 +5,13 @@ const CharacterDetail = (props) => {
     return (
         <ModalWindow>
             <div className="character_detail">
-                <Link to="/"><button className="return_button">Volver</button></Link>
+                <Link to="/">
+                    <button
+                        // onClick={props.handleLastSearch}
+                        className="return_button">
+                        Volver
+                    </button>
+                </Link>
                 <article className="character_card">
                     <img src={props.character.photo} alt={props.character.name} />
                     <div className="character_info">
