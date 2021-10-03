@@ -50,27 +50,24 @@ function App() {
 
   return (
     <div className="page">
-
+      <Header></Header>
+      <Main>
+        <Filters
+          // lastSearch={lastSearch} 
+          search={search}
+          handleSearch={handleSearch}></Filters>
+        <section className="characters_list_section" >
+          <CharacterList search={search} filteredData={filteredData}></CharacterList>
+        </section>
+      </Main>
+      <Footer></Footer>
       <Switch>
         <Route exact path='/'>
-          <Header></Header>
-          <Main>
-            <Filters
-              // lastSearch={lastSearch} 
-              search={search}
-              handleSearch={handleSearch}></Filters>
-            <section className="characters_list_section" >
-              <CharacterList search={search} filteredData={filteredData}></CharacterList>
-            </section>
-          </Main>
-          <Footer></Footer>
         </Route>
         <Route path='/character/:id'>
-          <Header></Header>
           <CharacterDetail
             // handleLastSearch={handleLastSearch} 
             character={clickedCharacter}></CharacterDetail>
-          <Footer></Footer>
         </Route>
       </Switch>
     </div>
