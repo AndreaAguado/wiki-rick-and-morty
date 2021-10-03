@@ -12,6 +12,7 @@ import CharacterDetail from './CharacterDetail';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
+import NoFoundPage from './NoFoundPage';
 
 function App() {
 
@@ -50,24 +51,42 @@ function App() {
 
   return (
     <div className="page">
-      <Header></Header>
-      <Main>
-        <Filters
-          // lastSearch={lastSearch} 
-          search={search}
-          handleSearch={handleSearch}></Filters>
-        <section className="characters_list_section" >
-          <CharacterList search={search} filteredData={filteredData}></CharacterList>
-        </section>
-      </Main>
-      <Footer></Footer>
       <Switch>
         <Route exact path='/'>
+          <Header></Header>
+          <Main>
+            <Filters
+              // lastSearch={lastSearch} 
+              search={search}
+              handleSearch={handleSearch}></Filters>
+            <section className="characters_list_section" >
+              <CharacterList search={search} filteredData={filteredData}></CharacterList>
+            </section>
+          </Main>
+          <Footer></Footer>
         </Route>
         <Route path='/character/:id'>
+          <Header></Header>
+          <Main>
+            <Filters
+              // lastSearch={lastSearch} 
+              search={search}
+              handleSearch={handleSearch}></Filters>
+            <section className="characters_list_section" >
+              <CharacterList search={search} filteredData={filteredData}></CharacterList>
+            </section>
+          </Main>
+          <Footer></Footer>
           <CharacterDetail
             // handleLastSearch={handleLastSearch} 
             character={clickedCharacter}></CharacterDetail>
+        </Route>
+        <Route>
+          <Header></Header>
+          <Main>
+            <NoFoundPage></NoFoundPage>
+          </Main>
+          <Footer></Footer>
         </Route>
       </Switch>
     </div>
