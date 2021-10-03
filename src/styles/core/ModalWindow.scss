@@ -1,3 +1,5 @@
+@import "./reset.scss";
+@import "./variables.scss";
 .modal {
   position: fixed;
   top: 0;
@@ -22,6 +24,8 @@
         padding-bottom: 0.5rem;
         border-bottom: 1px solid #ccc;
         .modal__title {
+          color: $page_background;
+          font-size: 30px;
         }
       }
     }
