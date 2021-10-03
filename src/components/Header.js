@@ -3,7 +3,7 @@ import '../styles/layout/Header.scss';
 const Header = () => {
     return (
         <header className="header">
-            <img className="header_logo" src={logo} alt="Rick and Morty logo" />
+            <a href="/" className="header_link"><img className="header_logo" title="Rick and Morty logo" src={logo} alt="Rick and Morty logo" /></a>
         </header>
     )
 }
