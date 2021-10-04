@@ -13,8 +13,8 @@ const Filters = (props) => {
                 onKeyUp={handleChange}
                 className="text_input"
                 type="text" />
+            <label htmlFor="species">Species:</label>
             <select onChange={handleSelect} className="species_filter" name="species" id="species">
-                <option value="" selected disabled="disabled">Species:</option>
                 <option value="All">Show all</option>
                 <option value="Human">Human</option>
                 <option value="Alien">Alien</option>
