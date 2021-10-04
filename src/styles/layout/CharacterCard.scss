@@ -8,6 +8,12 @@
   background-color: $primary_color;
   margin: 10px 10px 10px 10px;
   border-radius: 5px;
+  @media all and (max-width: 1200px) {
+    width: 20%;
+  }
+  @media all and (max-width: 768px) {
+    width: 40%;
+  }
   @media all and (max-width: 320px) {
     width: 100%;
   }
