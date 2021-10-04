@@ -14,14 +14,14 @@ const CharacterCard = (props) => {
     }
 
     return (
-        <Link to={`/character/${props.character.id}`}>
+        <Link to={`/character/${props.character.id}`} style={{ textDecoration: 'none' }}>
             <img className="character_img" src={props.character.photo} alt={props.character.name} />
             <div className="card_bottom">
                 <div className="character_info">
                     <p className="info_item">{props.character.name}</p>
                     <p className="info_item">{props.character.species}</p>
                 </div>
-                <i className={`status_icon ${classContent()}`}></i>
+                <i className={`status_icon ${classContent()}`} title={`status: ${props.character.status}`}></i>
             </div>
         </Link>
     )
