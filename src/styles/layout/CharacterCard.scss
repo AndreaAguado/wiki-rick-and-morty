@@ -11,13 +11,23 @@
     width: 100%;
     border-radius: 5px;
   }
-  .character_info {
-    background-color: violet;
-    color: $font_color;
-    padding: 10px 0 10px 20px;
-    border-radius: 5px;
-    .info_item {
-      margin: 5px 0 5px 0;
+  .card_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .character_info {
+      background-color: violet;
+      color: $font_color;
+      padding: 10px 0 10px 20px;
+      border-radius: 5px;
+      width: 80%;
+      .info_item {
+        margin: 5px 0 5px 0;
+      }
+    }
+    .status_icon {
+      font-size: 30px;
+      color: $font_color;
     }
   }
 }
