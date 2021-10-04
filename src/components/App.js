@@ -18,6 +18,7 @@ function App() {
 
   const [charactersData, setCharactersData] = useState([]);
   const [search, setSearch] = useState('');
+  const [speciesSelection, setSpeciesSelection] = useState('All');
   // const [lastSearch, setLastSearch] = useState('');
 
   useEffect(() => {
@@ -27,14 +28,29 @@ function App() {
     });
   }, []);
 
-
-  const filteredData = charactersData.filter((character) => {
+  console.log(speciesSelection);
+  let filteredData = charactersData.filter((character) => {
     return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
-  })
+  }).filter((character) => {
+
+    if (speciesSelection === 'All') {
+      return true;
+    }
+    else {
+      return character.species === speciesSelection;
+    }
+  });
+
+  console.log(filteredData);
+  // console.log(aux);
 
   const handleSearch = (value) => {
     // ev.preventDefault();
     setSearch(value);
+  }
+
+  const handleSpecies = (value) => {
+    setSpeciesSelection(value);
   }
 
   // const handleLastSearch = (ev) => {
@@ -43,11 +59,8 @@ function App() {
   // }
 
   const routeData = useRouteMatch('/character/:id');
-  console.log(routeData);
   const characterId = routeData !== null ? routeData.params.id : '';
-  console.log(characterId);
   const clickedCharacter = charactersData.find((character) => character.id === parseInt(characterId));
-  console.log(clickedCharacter);
 
   return (
     <div className="page">
@@ -58,7 +71,8 @@ function App() {
             <Filters
               // lastSearch={lastSearch} 
               search={search}
-              handleSearch={handleSearch}></Filters>
+              handleSearch={handleSearch}
+              handleSpecies={handleSpecies}></Filters>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
