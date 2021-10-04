@@ -1,5 +1,4 @@
 import '../styles/layout/CharacterDetail.scss';
-import { Link } from 'react-router-dom';
 import ModalWindow from './ModalWindow';
 import logo from '../images/rick_no_found.png';
 
@@ -14,14 +13,6 @@ const CharacterDetail = (props) => {
     else {
         return (
             <ModalWindow title={props.character.name}>
-                {/* <div className="character_detail"> */}
-                {/* <Link to="/">
-                        <button
-                            // onClick={props.handleLastSearch}
-                            className="return_button">
-                            Volver
-                        </button>
-                    </Link> */}
                 <article className="character_detail">
                     <img className="character_detail_img" src={props.character.photo} alt={props.character.name} />
                     <div className="character_info">

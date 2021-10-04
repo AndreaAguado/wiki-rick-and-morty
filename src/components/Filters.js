@@ -6,9 +6,6 @@ const Filters = (props) => {
     return (
         <form onSubmit={(ev) => ev.preventDefault()} action="">
             <input
-                //  value={props.lastSearch !== '' ? props.lastSearch : ''} 
-                // value={props.search !== '' ? props.search : ''}
-                // onKeyUp={props.handleSearch}
                 onKeyUp={handleChange}
                 className="text_input"
                 type="text" />
