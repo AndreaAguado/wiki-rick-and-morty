@@ -11,10 +11,19 @@
   height: 80%;
   width: max-content;
   padding: 25px 25px 25px 25px;
+  @media all and (max-width: 1200px) {
+    width: auto;
+    flex-direction: column;
+    font-size: 14px;
+  }
   &_img {
     width: 45%;
   }
 }
 .no_found_img {
   height: 150px;
+  @media all and (max-width: 1200px) {
+    width: 60%;
+    height: auto;
+  }
 }
