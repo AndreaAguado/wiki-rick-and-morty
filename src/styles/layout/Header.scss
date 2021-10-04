@@ -10,6 +10,9 @@
   background-color: $page_background;
   &_logo {
     height: 100%;
+    @media all and (max-width: 320px) {
+      height: 80%;
+    }
   }
   &_link {
     height: 100%;
