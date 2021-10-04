@@ -19,7 +19,6 @@ function App() {
   const [charactersData, setCharactersData] = useState([]);
   const [search, setSearch] = useState('');
   const [speciesSelection, setSpeciesSelection] = useState('All');
-  // const [lastSearch, setLastSearch] = useState('');
 
   useEffect(() => {
     callToApi().then(response => {
@@ -42,21 +41,14 @@ function App() {
   });
 
   console.log(filteredData);
-  // console.log(aux);
 
   const handleSearch = (value) => {
-    // ev.preventDefault();
     setSearch(value);
   }
 
   const handleSpecies = (value) => {
     setSpeciesSelection(value);
   }
-
-  // const handleLastSearch = (ev) => {
-  //   ev.preventDefault();
-  //   setLastSearch(search);
-  // }
 
   const routeData = useRouteMatch('/character/:id');
   const characterId = routeData !== null ? routeData.params.id : '';
