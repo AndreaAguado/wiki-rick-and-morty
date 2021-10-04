@@ -1,6 +1,10 @@
 @import "../core/reset.scss";
 @import "../core/variables.scss";
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
 .text_input {
   font-family: inherit;
   background-color: $page_background;
@@ -9,34 +13,29 @@
   height: 15px;
   min-width: 250px;
   color: $font_color;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 2px $neon_color;
+  font-size: inherit;
 }
-//   .text_input:focus {
-//     border-color: $primary_color;
-//     -webkit-box-shadow: none;
-//     box-shadow: none;
-//   }
-//   .text_input:active {
-//     border: solid 2px $primary_color;
-//   }
-.species_selector_container {
-  // display: flex;
-  // flex-direction: column;
+.text_input::placeholder {
+  color: $primary_color;
+}
+.selector_container {
+  margin-top: 25px;
   .species_filter {
     font-family: inherit;
     font-size: inherit;
     padding: 10px 20px 10px 20px;
     background-color: $neon_color;
     border-radius: 22px;
+    margin: 0 5px 0 5px;
   }
-}
-.status_selector_container {
-  // display: flex;
-  // flex-direction: column;
   .status_filter {
     font-family: inherit;
     font-size: inherit;
     padding: 10px 20px 10px 20px;
     background-color: $neon_color;
     border-radius: 22px;
+    margin: 0 5px 0 5px;
   }
 }
