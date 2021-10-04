@@ -73,7 +73,6 @@ function App() {
           <Header></Header>
           <Main>
             <Filters
-              // lastSearch={lastSearch} 
               search={search}
               handleSearch={handleSearch}
               handleSpecies={handleSpecies}
@@ -88,7 +87,6 @@ function App() {
           <Header></Header>
           <Main>
             <Filters
-              // lastSearch={lastSearch} 
               search={search}
               handleSearch={handleSearch}></Filters>
             <section className="characters_list_section" >
@@ -97,7 +95,6 @@ function App() {
           </Main>
           <Footer></Footer>
           <CharacterDetail
-            // handleLastSearch={handleLastSearch} 
             character={clickedCharacter}></CharacterDetail>
         </Route>
         <Route>
