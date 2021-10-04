@@ -14,24 +14,28 @@ const CharacterDetail = (props) => {
     else {
         return (
             <ModalWindow title={props.character.name}>
-                <div className="character_detail">
-                    <Link to="/">
+                {/* <div className="character_detail"> */}
+                {/* <Link to="/">
                         <button
                             // onClick={props.handleLastSearch}
                             className="return_button">
                             Volver
                         </button>
-                    </Link>
-                    <article className="character_card">
-                        <img src={props.character.photo} alt={props.character.name} />
-                        <div className="character_info">
-                            <p>Status: {props.character.status} </p>
-                            <p>Species: {props.character.species} </p>
-                            <p>Origin: {props.character.origin} </p>
-                            <p>Episodes: {(props.character.episodes).length} </p>
-                        </div>
-                    </article>
-                </div >
+                    </Link> */}
+                <article className="character_detail">
+                    <img className="character_detail_img" src={props.character.photo} alt={props.character.name} />
+                    <div className="character_info">
+                        <p className="character_info_item">
+                            Status: {props.character.status} </p>
+                        <p className="character_info_item">
+                            Species: {props.character.species} </p>
+                        <p className="character_info_item">
+                            Origin: {props.character.origin} </p>
+                        <p className="character_info_item">
+                            Episodes: {(props.character.episodes).length} </p>
+                    </div>
+                </article>
+                {/* </div > */}
             </ModalWindow>
         )
     }
