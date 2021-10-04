@@ -28,6 +28,12 @@ function App() {
     });
   }, []);
 
+  charactersData.sort((a, b) => {
+    let textA = a.name.toLocaleLowerCase();
+    let textB = b.name.toLocaleLowerCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
+
   console.log(speciesSelection);
   let filteredData = charactersData.filter((character) => {
     return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
