@@ -2,6 +2,7 @@
 @import "../core/variables.scss";
 
 .text_input {
+  font-family: inherit;
   background-color: $page_background;
   border: solid 2px $primary_color;
   padding: 10px 20px 10px 20px;
@@ -17,3 +18,25 @@
 //   .text_input:active {
 //     border: solid 2px $primary_color;
 //   }
+.species_selector_container {
+  // display: flex;
+  // flex-direction: column;
+  .species_filter {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px 20px 10px 20px;
+    background-color: $neon_color;
+    border-radius: 22px;
+  }
+}
+.status_selector_container {
+  // display: flex;
+  // flex-direction: column;
+  .status_filter {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px 20px 10px 20px;
+    background-color: $neon_color;
+    border-radius: 22px;
+  }
+}

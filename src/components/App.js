@@ -19,6 +19,7 @@ function App() {
   const [charactersData, setCharactersData] = useState([]);
   const [search, setSearch] = useState('');
   const [speciesSelection, setSpeciesSelection] = useState('All');
+  const [statusSelection, setStatusSelection] = useState('All');
 
   useEffect(() => {
     callToApi().then(response => {
@@ -38,7 +39,14 @@ function App() {
     else {
       return character.species === speciesSelection;
     }
-  });
+  }).filter((character) => {
+    if (statusSelection === 'All') {
+      return true;
+    }
+    else {
+      return character.status === statusSelection;
+    }
+  })
 
   console.log(filteredData);
 
@@ -48,6 +56,10 @@ function App() {
 
   const handleSpecies = (value) => {
     setSpeciesSelection(value);
+  }
+
+  const handleStatus = (value) => {
+    setStatusSelection(value);
   }
 
   const routeData = useRouteMatch('/character/:id');
@@ -64,7 +76,8 @@ function App() {
               // lastSearch={lastSearch} 
               search={search}
               handleSearch={handleSearch}
-              handleSpecies={handleSpecies}></Filters>
+              handleSpecies={handleSpecies}
+              handleStatus={handleStatus}></Filters>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
