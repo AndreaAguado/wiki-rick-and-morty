@@ -18,13 +18,13 @@ const Filters = (props) => {
                 type="text"
                 placeholder="Write something here..." />
             <span className="selector_container">
-                <label htmlFor="species">Species:</label>
+                <label className="selector_label" htmlFor="species">Species:</label>
                 <select onChange={handleSelect} className="species_filter" name="species" id="species">
                     <option value="All">Show all</option>
                     <option value="Human">Human</option>
                     <option value="Alien">Alien</option>
                 </select>
-                <label htmlFor="status">Status:</label>
+                <label className="selector_label" htmlFor="status">Status:</label>
                 <select onChange={handleSelectStatus} className="status_filter" name="status" id="status">
                     <option value="All">Show all</option>
                     <option value="Alive">Alive</option>
