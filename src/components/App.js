@@ -13,6 +13,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import NoFoundPage from './NoFoundPage';
+import objectToExport from '../services/callToApi';
 
 function App() {
 
@@ -20,13 +21,21 @@ function App() {
   const [search, setSearch] = useState('');
   const [speciesSelection, setSpeciesSelection] = useState('All');
   const [statusSelection, setStatusSelection] = useState('All');
+  const [nextPageCharacters, setNextPageCharacters] = useState([]);
 
   useEffect(() => {
-    callToApi().then(response => {
+    objectToExport.callToApi().then(response => {
       console.log(response);
       setCharactersData(response);
     });
   }, []);
+
+  useEffect(() => {
+    objectToExport.nextPages().then(response => {
+      console.log(response);
+      setNextPageCharacters(response);
+    })
+  }, nextPageCharacters);
 
   charactersData.sort((a, b) => {
     let textA = a.name.toLocaleLowerCase();
