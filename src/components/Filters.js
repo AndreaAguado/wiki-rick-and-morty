@@ -10,6 +10,12 @@ const Filters = (props) => {
     const handleSelectStatus = (ev) => {
         props.handleStatus(ev.target.value);
     }
+    const handleSelectOrigin = (ev) => {
+        props.handleOrigin(ev.target.value);
+    }
+    const handleChangeCheckbox = (ev) => {
+        props.handleCheckbox(ev.target.checked);
+    }
     return (
         <form className="form" onSubmit={(ev) => ev.preventDefault()}>
             <input
@@ -31,6 +37,14 @@ const Filters = (props) => {
                     <option value="Dead">Dead</option>
                     <option value="unknown">Unknown</option>
                 </select>
+                <label className="selector_label" htmlFor="origin">Origin:</label>
+                <select onChange={handleSelectOrigin} className="status_filter" name="origin" id="origin">
+                    <option value="All">Show all</option>
+                    <option value="Earth (C-137)">Earth (C-137)</option>
+                    <option value="Earth (Replacement Dimension)">Earth (Replacement Dimension)</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+                <input onChange={handleChangeCheckbox} type="checkbox" name="origin_check" id="origin_check" checked={props.checkbox} />
             </span>
         </form>
     )

@@ -20,6 +20,8 @@ function App() {
   const [search, setSearch] = useState('');
   const [speciesSelection, setSpeciesSelection] = useState('All');
   const [statusSelection, setStatusSelection] = useState('All');
+  const [originSelection, setOriginSelection] = useState('All');
+  const [checkbox, setCheckbox] = useState(false);
 
   useEffect(() => {
     callToApi().then(response => {
@@ -54,7 +56,22 @@ function App() {
     }
   })
 
-  console.log(filteredData);
+  if (checkbox) {
+    filteredData = filteredData.filter((character) => {
+      if (originSelection === 'All') {
+        // console.log(originSelection);  
+        return true;
+      }
+      else {
+        // console.log(character.origin, originSelection);
+        return character.origin === originSelection;
+      }
+
+    })
+    console.log('if:', filteredData);
+  }
+
+
 
   const handleSearch = (value) => {
     setSearch(value);
@@ -66,6 +83,14 @@ function App() {
 
   const handleStatus = (value) => {
     setStatusSelection(value);
+  }
+
+  const handleOrigin = (value) => {
+    setOriginSelection(value);
+  }
+
+  const handleCheckbox = (checked) => {
+    setCheckbox(checked);
   }
 
   const routeData = useRouteMatch('/character/:id');
@@ -82,7 +107,10 @@ function App() {
               search={search}
               handleSearch={handleSearch}
               handleSpecies={handleSpecies}
-              handleStatus={handleStatus}></Filters>
+              handleStatus={handleStatus}
+              handleOrigin={handleOrigin}
+              handleCheckbox={handleCheckbox}
+              checkbox={checkbox}></Filters>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
