@@ -10,8 +10,11 @@ const CharacterList = (props) => {
     })
 
     const message = () => {
-        if (html.length < 1) {
-            return <p className="warning_message">No existen personajes que coincidan con : "{props.search}" </p>
+        if (html.length < 1 && props.statusSelection === 'All' && props.speciesSelection === 'All') {
+            return <p className="warning_message">There are no characters that match: "{props.search}" </p>
+        }
+        else if (html.length < 1 && (props.statusSelection !== 'All' || props.speciesSelection !== 'All')) {
+            return <p className="warning_message">There are no characters that match that selection</p>
         }
         else {
             return (

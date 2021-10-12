@@ -105,7 +105,7 @@ function App() {
               handleStatus={handleStatus}></Filters>
             <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
             <section className="characters_list_section" >
-              <CharacterList search={search} filteredData={filteredData}></CharacterList>
+              <CharacterList search={search} filteredData={filteredData} speciesSelection={speciesSelection} statusSelection={statusSelection}></CharacterList>
             </section>
             <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
           </Main>
