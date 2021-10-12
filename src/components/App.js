@@ -104,7 +104,7 @@ function App() {
               handleStatus={handleStatus}></Filters>
             <nav className="pages_nav_bar">
               <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Previous</button>
-              <p>Page {pageNum} of {numberOfPages}</p>
+              <p className="pages_nav_bar_index">Page {pageNum} of {numberOfPages}</p>
               <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
             </nav>
             <section className="characters_list_section" >
