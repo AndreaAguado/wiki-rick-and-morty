@@ -2,15 +2,29 @@
 @import "../core/variables.scss";
 
 .pages_nav_bar {
-  background-color: hotpink;
+  background-color: $neon_color2;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
-  padding: 15px 0 15px 0;
+  //   padding: 15px 5px 15px 5px;
+  border-radius: 30px;
   &_index {
     padding: 0 20px 0 20px;
+  }
+  &_button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: inherit;
+  }
+  &_button:hover {
+    color: $font_color;
+    font-weight: bold;
+    box-shadow: 0px 0px 20px 4px $neon_color2;
   }
 }
 .hidden {
