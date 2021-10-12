@@ -12,6 +12,16 @@
   border-radius: 30px;
   &_index {
     padding: 0 20px 0 20px;
+    .input_page_number {
+      padding-left: 3px;
+      width: 35px;
+      font-size: inherit;
+      font-family: inherit;
+      background-color: inherit;
+      border-radius: 4px;
+      border: 2px solid $font_color;
+      margin: 0 6px 0 8px;
+    }
   }
   &_button {
     font-family: inherit;

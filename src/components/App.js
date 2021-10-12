@@ -88,6 +88,9 @@ function App() {
     setPageNum(pageNumCont);
   }
 
+  const handlePageInput = (value) => {
+    setPageNum(value);
+  }
   const routeData = useRouteMatch('/character/:id');
   const characterId = routeData !== null ? routeData.params.id : '';
   const clickedCharacter = charactersData.find((character) => character.id === parseInt(characterId));
@@ -103,11 +106,11 @@ function App() {
               handleSearch={handleSearch}
               handleSpecies={handleSpecies}
               handleStatus={handleStatus}></Filters>
-            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
+            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} handlePageInput={handlePageInput}></NavBar>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData} speciesSelection={speciesSelection} statusSelection={statusSelection}></CharacterList>
             </section>
-            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
+            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} handlePageInput={handlePageInput}></NavBar>
           </Main>
           <Footer></Footer>
         </Route>
