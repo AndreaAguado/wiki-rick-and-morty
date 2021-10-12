@@ -1,9 +1,6 @@
 import '../styles/App.scss';
 
-import callToApi from '../services/callToApi';
-
 import { useState, useEffect } from 'react';
-
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Filters from './Filters';
@@ -21,21 +18,27 @@ function App() {
   const [search, setSearch] = useState('');
   const [speciesSelection, setSpeciesSelection] = useState('All');
   const [statusSelection, setStatusSelection] = useState('All');
-  const [nextPageCharacters, setNextPageCharacters] = useState([]);
+  const [numberOfPages, setNumberOfPages] = useState('');
+  let pageNumCont;
+  const [pageNum, setPageNum] = useState(1);
+
+  useEffect(() => {
+    objectToExport.bringInfo().then(response => {
+      setNumberOfPages(response.pages);
+    })
+  }, []);
 
   useEffect(() => {
     objectToExport.callToApi().then(response => {
-      console.log(response);
       setCharactersData(response);
     });
   }, []);
 
   useEffect(() => {
-    objectToExport.nextPages().then(response => {
-      console.log(response);
-      setNextPageCharacters(response);
+    objectToExport.nextPages(pageNum).then(response => {
+      setCharactersData(response);
     })
-  }, nextPageCharacters);
+  }, [pageNum]);
 
   charactersData.sort((a, b) => {
     let textA = a.name.toLocaleLowerCase();
@@ -43,7 +46,6 @@ function App() {
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
 
-  console.log(speciesSelection);
   let filteredData = charactersData.filter((character) => {
     return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
   }).filter((character) => {
@@ -63,8 +65,6 @@ function App() {
     }
   })
 
-  console.log(filteredData);
-
   const handleSearch = (value) => {
     setSearch(value);
   }
@@ -75,6 +75,16 @@ function App() {
 
   const handleStatus = (value) => {
     setStatusSelection(value);
+  }
+
+  const handleNextPage = (ev) => {
+    pageNumCont = pageNum + 1;
+    setPageNum(pageNumCont);
+  }
+
+  const handlePrevPage = (ev) => {
+    pageNumCont = pageNum - 1;
+    setPageNum(pageNumCont);
   }
 
   const routeData = useRouteMatch('/character/:id');
@@ -92,6 +102,11 @@ function App() {
               handleSearch={handleSearch}
               handleSpecies={handleSpecies}
               handleStatus={handleStatus}></Filters>
+            <nav className="pages_nav_bar">
+              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Prev</button>
+              <p>Página {pageNum}</p>
+              <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
+            </nav>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>

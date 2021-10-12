@@ -1,9 +1,8 @@
 const callToApi = () => {
     return (
-        fetch('https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json')
+        fetch('https://rickandmortyapi.com/api/character/?page=1')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 return data.results.map((character) => {
                     return {
                         photo: character.image,
@@ -13,11 +12,23 @@ const callToApi = () => {
                         status: character.status,
                         origin: character.origin.name,
                         episodes: character.episode,
-                        nextPage: character.next,
-                        prevPage: character.prev
-
                     }
                 })
+            })
+    )
+}
+
+const bringInfo = () => {
+    return (
+        fetch('https://rickandmortyapi.com/api/character/?page=1')
+            .then(response => response.json())
+            .then(data => {
+                return {
+                    count: data.info.count,
+                    pages: data.info.pages,
+                    next: data.info.next,
+                    prev: data.info.prev
+                }
             })
     )
 }
@@ -25,10 +36,9 @@ const callToApi = () => {
 const nextPages = (pageNum) => {
     if (pageNum !== null) {
         return (
-            fetch(pageNum)
+            fetch(`https://rickandmortyapi.com/api/character/?page=${pageNum}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     return data.results.map((character) => {
                         return {
                             photo: character.image,
@@ -47,6 +57,7 @@ const nextPages = (pageNum) => {
 }
 const objectToExport = {
     callToApi: callToApi,
+    bringInfo: bringInfo,
     nextPages: nextPages
 };
 export default objectToExport;
