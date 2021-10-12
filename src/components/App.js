@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Main from './Main';
 import NoFoundPage from './NoFoundPage';
 import objectToExport from '../services/callToApi';
+import NavBar from './NavBar';
 
 function App() {
 
@@ -102,19 +103,11 @@ function App() {
               handleSearch={handleSearch}
               handleSpecies={handleSpecies}
               handleStatus={handleStatus}></Filters>
-            <nav className="pages_nav_bar">
-              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Previous</button>
-              <p className="pages_nav_bar_index">Page {pageNum} of {numberOfPages}</p>
-              <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
-            </nav>
+            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
-            <nav className="pages_nav_bar">
-              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Previous</button>
-              <p className="pages_nav_bar_index">Page {pageNum} of {numberOfPages}</p>
-              <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
-            </nav>
+            <NavBar pageNum={pageNum} numberOfPages={numberOfPages} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}></NavBar>
           </Main>
           <Footer></Footer>
         </Route>

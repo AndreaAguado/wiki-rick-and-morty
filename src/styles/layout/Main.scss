@@ -8,21 +8,6 @@
   flex-direction: column;
   align-items: center;
   background-color: $page_background;
-  .pages_nav_bar {
-    background-color: hotpink;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 15px;
-    padding: 15px 0 15px 0;
-    &_index {
-      padding: 0 20px 0 20px;
-    }
-  }
-  .hidden {
-    display: none;
-  }
   .characters_list_section {
     padding-top: 30px;
     display: flex;

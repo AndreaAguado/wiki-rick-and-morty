@@ -1,0 +1,18 @@
+@import "../core/reset.scss";
+@import "../core/variables.scss";
+
+.pages_nav_bar {
+  background-color: hotpink;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 15px 0 15px 0;
+  &_index {
+    padding: 0 20px 0 20px;
+  }
+}
+.hidden {
+  display: none;
+}
