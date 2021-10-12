@@ -103,13 +103,18 @@ function App() {
               handleSpecies={handleSpecies}
               handleStatus={handleStatus}></Filters>
             <nav className="pages_nav_bar">
-              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Prev</button>
-              <p>Página {pageNum}</p>
+              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Previous</button>
+              <p>Page {pageNum} of {numberOfPages}</p>
               <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
             </nav>
             <section className="characters_list_section" >
               <CharacterList search={search} filteredData={filteredData}></CharacterList>
             </section>
+            <nav className="pages_nav_bar">
+              <button className={pageNum === 1 ? 'hidden' : ''} onClick={handlePrevPage}>Previous</button>
+              <p>Page {pageNum} of {numberOfPages}</p>
+              <button className={pageNum === numberOfPages ? 'hidden' : ''} onClick={handleNextPage}>Next</button>
+            </nav>
           </Main>
           <Footer></Footer>
         </Route>
