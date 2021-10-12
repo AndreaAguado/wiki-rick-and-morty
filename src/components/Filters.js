@@ -23,6 +23,10 @@ const Filters = (props) => {
                     <option value="All">Show all</option>
                     <option value="Human">Human</option>
                     <option value="Alien">Alien</option>
+                    <option value="Humanoid">Humanoid</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Mythological Creature">Mythological Creature</option>
+                    <option value="Poopybutthole">Poopybutthole</option>
                 </select>
                 <label className="selector_label" htmlFor="status">Status:</label>
                 <select onChange={handleSelectStatus} className="status_filter" name="status" id="status">
