@@ -67,9 +67,17 @@
     }
   }
   .character_info_item_4 {
+    height: 100%;
     grid-area: episodes;
     justify-self: center;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .status_icon {
+      font-size: 30px;
+    }
   }
 }
 .no_found_img {

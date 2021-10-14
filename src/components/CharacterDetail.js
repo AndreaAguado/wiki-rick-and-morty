@@ -61,8 +61,11 @@ const CharacterDetail = (props) => {
                             Origin: {props.character.origin} </p>
                         <i className={`status_icon ${classContent3()}`}></i>
                     </div>
-                    <p className="character_info_item_4">
-                        Total episodes: {(props.character.episodes).length} </p>
+                    <div className="character_info_item_4">
+                        <p >
+                            Total episodes: {(props.character.episodes).length} </p>
+                        <i className="status_icon fas fa-film"></i>
+                    </div>
                 </article>
             </ModalWindow>
         )
