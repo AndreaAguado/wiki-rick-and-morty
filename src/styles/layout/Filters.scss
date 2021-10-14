@@ -30,6 +30,7 @@
     max-width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   @media all and (max-width: 320px) {
     max-width: 70%;
@@ -46,6 +47,7 @@
     background-color: $neon_color;
     border-radius: 22px;
     margin: 5px 5px 5px 5px;
+    width: 125px;
   }
   .species_filter:hover {
     box-shadow: 0px 0px 20px 4px $neon_color;
@@ -57,6 +59,7 @@
     background-color: $neon_color;
     border-radius: 22px;
     margin: 5px 5px 5px 5px;
+    width: 125px;
   }
   .status_filter:hover {
     box-shadow: 0px 0px 20px 4px $neon_color;
