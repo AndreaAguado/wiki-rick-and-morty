@@ -51,19 +51,15 @@ function App() {
     return character.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
   }).filter((character) => {
 
-    if (speciesSelection === 'All') {
-      return true;
-    }
-    else {
+    if (speciesSelection !== 'All') {
       return character.species === speciesSelection;
     }
+    return true;
   }).filter((character) => {
-    if (statusSelection === 'All') {
-      return true;
-    }
-    else {
+    if (statusSelection !== 'All') {
       return character.status === statusSelection;
     }
+    return true;
   })
 
   const handleSearch = (value) => {
