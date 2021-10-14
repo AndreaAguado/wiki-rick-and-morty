@@ -2,22 +2,82 @@
 @import "../core/variables.scss";
 
 .character_detail {
-  height: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 35% 35% 30%;
+  grid-template-areas: "photo status species" "photo origin episodes";
   background-color: $primary_color;
-  height: 80%;
-  width: max-content;
   padding: 25px 25px 25px 25px;
+  border-radius: 0.5rem;
   @media all and (max-width: 1200px) {
+    grid-template-rows: 45% 25% 25%;
+    grid-template-columns: 1fr 1fr;
     width: auto;
     flex-direction: column;
     font-size: 14px;
+    grid-template-areas: "photo photo" "status species" " origin episodes";
   }
   &_img {
-    width: 45%;
+    width: 90%;
+    grid-area: photo;
+    border-radius: inherit;
+    @media all and (max-width: 1200px) {
+      height: 100%;
+      width: auto;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .character_info_item_1 {
+    height: 100%;
+    grid-area: status;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .status_icon {
+      font-size: 30px;
+    }
+  }
+  .character_info_item_2 {
+    height: 100%;
+    grid-area: species;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .status_icon {
+      font-size: 30px;
+    }
+  }
+  .character_info_item_3 {
+    height: 100%;
+    grid-area: origin;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .status_icon {
+      font-size: 30px;
+    }
+  }
+  .character_info_item_4 {
+    height: 100%;
+    grid-area: episodes;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .status_icon {
+      font-size: 30px;
+    }
   }
 }
 .no_found_img {
