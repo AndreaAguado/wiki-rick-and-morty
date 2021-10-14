@@ -22,6 +22,18 @@ const CharacterDetail = (props) => {
             return "fas fa-child";
         }
     }
+
+    const classContent3 = () => {
+        if (props.character.origin === 'unknown') {
+            return "fas fa-question";
+        }
+        else if (!props.character.origin.includes('Earth')) {
+            return "fas fa-globe";
+        }
+        else {
+            return "fas fa-globe-europe";
+        }
+    }
     if (props.character === undefined) {
         return (
             <ModalWindow title={'Personaje no encontrado'}>
@@ -44,8 +56,11 @@ const CharacterDetail = (props) => {
                             Species: {props.character.species} </p>
                         <i className={`status_icon ${classContent2()}`} title={`species: ${props.character.species}`}></i>
                     </div>
-                    <p className="character_info_item_3">
-                        Origin: {props.character.origin} </p>
+                    <div className="character_info_item_3">
+                        <p>
+                            Origin: {props.character.origin} </p>
+                        <i className={`status_icon ${classContent3()}`}></i>
+                    </div>
                     <p className="character_info_item_4">
                         Total episodes: {(props.character.episodes).length} </p>
                 </article>
