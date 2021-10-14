@@ -7,6 +7,7 @@
   grid-template-areas: "photo status species" "photo origin episodes";
   background-color: $primary_color;
   padding: 25px 25px 25px 25px;
+  border-radius: 0.5rem;
   @media all and (max-width: 1200px) {
     grid-template-rows: 45% 25% 25%;
     grid-template-columns: 1fr 1fr;
@@ -18,6 +19,7 @@
   &_img {
     width: 80%;
     grid-area: photo;
+    border-radius: inherit;
     @media all and (max-width: 1200px) {
       height: 100%;
       width: auto;
