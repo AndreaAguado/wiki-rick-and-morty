@@ -37,6 +37,7 @@ function App() {
 
   useEffect(() => {
     objectToExport.nextPages(pageNum).then(response => {
+      console.log(response);
       setCharactersData(response);
     })
   }, [pageNum]);
