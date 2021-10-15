@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.9928b4e6.chunk.css",
-    "main.js": "./static/js/main.a56e88d8.chunk.js",
-    "main.js.map": "./static/js/main.a56e88d8.chunk.js.map",
+    "main.css": "./static/css/main.c72c5004.chunk.css",
+    "main.js": "./static/js/main.5e54217f.chunk.js",
+    "main.js.map": "./static/js/main.5e54217f.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.7ad783a2.js",
     "runtime-main.js.map": "./static/js/runtime-main.7ad783a2.js.map",
     "static/js/2.16e0479d.chunk.js": "./static/js/2.16e0479d.chunk.js",
     "static/js/2.16e0479d.chunk.js.map": "./static/js/2.16e0479d.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.9928b4e6.chunk.css.map": "./static/css/main.9928b4e6.chunk.css.map",
+    "static/css/main.c72c5004.chunk.css.map": "./static/css/main.c72c5004.chunk.css.map",
     "static/js/2.16e0479d.chunk.js.LICENSE.txt": "./static/js/2.16e0479d.chunk.js.LICENSE.txt",
     "static/media/404-error-not-found.a0396b78.png": "./static/media/404-error-not-found.a0396b78.png",
     "static/media/Rick_and_Morty_logo.de13d484.png": "./static/media/Rick_and_Morty_logo.de13d484.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.7ad783a2.js",
     "static/js/2.16e0479d.chunk.js",
-    "static/css/main.9928b4e6.chunk.css",
-    "static/js/main.a56e88d8.chunk.js"
+    "static/css/main.c72c5004.chunk.css",
+    "static/js/main.5e54217f.chunk.js"
   ]
 }
