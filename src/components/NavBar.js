@@ -1,4 +1,5 @@
 import '../styles/layout/NavBar.scss';
+import PropTypes from 'prop-types';
 const NavBar = (props) => {
     const handleChange = (ev) => {
         if (ev.target.value > props.numberOfPages) {
@@ -20,4 +21,12 @@ const NavBar = (props) => {
         </nav>
     )
 }
+NavBar.propTypes = {
+    pageNum: PropTypes.number,
+};
+
+NavBar.defaultProps = {
+    pageNum: 1,
+};
+
 export default NavBar;
