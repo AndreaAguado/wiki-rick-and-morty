@@ -13,7 +13,6 @@ const NavBar = (props) => {
         <nav className="pages_nav_bar">
             <button className={props.pageNum === 1 ? 'hidden' : 'pages_nav_bar_button'} onClick={props.handlePrevPage}><i className="fas fa-angle-left"></i> Previous</button>
             <p className="pages_nav_bar_index">Page
-                {/* {props.pageNum}  */}
                 <input onChange={handleChange} className="input_page_number" type="number" max={props.numberOfPages} min="1" name="inputPage" id="inputPage" placeholder="Ej. 2" value={props.pageNum} />
                 of {props.numberOfPages}</p>
 

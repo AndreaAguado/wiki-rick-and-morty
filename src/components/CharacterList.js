@@ -28,9 +28,6 @@ const CharacterList = (props) => {
     return (
         <>
             {message()}
-            {/* <ul className="characters_list">
-                {html}
-            </ul> */}
         </>
 
     )
