@@ -65,7 +65,7 @@ const CharacterDetail = (props) => {
                     </div>
                     <div className="character_info_item_4">
                         <p >
-                            Total episodes: {(props.character.episodes).length} </p>
+                            Appears in: {(props.character.episodes).length} episodes </p>
                         <i className="status_icon fas fa-film"></i>
                     </div>
                 </article>
