@@ -6,6 +6,7 @@
   background-color: $primary_color;
   margin: 10px 10px 10px 10px;
   border-radius: 5px;
+  padding: 10px 10px 10px 10px;
   @media all and (max-width: 1200px) {
     width: 20%;
   }
@@ -18,6 +19,7 @@
   .character_img {
     width: 100%;
     border-radius: 5px;
+    border: solid black 3px;
   }
   .card_bottom {
     display: flex;
