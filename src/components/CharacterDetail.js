@@ -36,7 +36,7 @@ const CharacterDetail = (props) => {
     }
     if (props.character === undefined) {
         return (
-            <ModalWindow title={'Personaje no encontrado'}>
+            <ModalWindow title={'Character not found'}>
                 <img className="no_found_img" src={logo} alt="Rick Sanchez PNG transparente" />
             </ModalWindow>
         )

@@ -5,7 +5,7 @@ const NoFoundPage = () => {
     return (
         <section className="nofound_section">
             <Link to="/" style={{ textDecoration: 'none' }}>
-                <p className="infomessage">Volver al Inicio</p>
+                <p className="infomessage">Return to homepage</p>
             </Link>
             <img className="img" src={noFoundLogo} alt="Error 404 page not found" />
 
