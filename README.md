@@ -16,8 +16,12 @@ During this evaluation I had to work with the contents of the `src/` folder, cre
 
 This project consists of a wiki page of Rick and Morty characters.
 
-![Page preview](./previewReadme.png)
-![Page preview](./previewReadme2.png)
+<!-- ![Page preview](./previewReadme.png)
+![Page preview](./previewReadme2.png) -->
+
+|                                           Characters preview                                            |                                                                                                 Character search                                                                                                  |
+| :-----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="previewReadme.png" alt="preview"  position="left" style="margin-right: 10px; width: 450px" /> | <img src="previewReadme2.png" alt="preview" position="right"  style="margin-right: 10px;width: 450px" /> <img src="previewReadme3.png" alt="preview" position="right"  style="margin-right: 10px;width: 450px" /> |
 
 - You can navigate through the pages to see all the available characters cards or directly introduce the page number to go there.
 - Additionally, you can use the input to search directly by their name or use the selectors to filter by species and/or status.
