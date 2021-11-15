@@ -1,5 +1,3 @@
-![hello kitty taping in a keyboard gif](https://media.tenor.com/images/78aae22c08c21fe665304fbdaab324fd/tenor.gif)
-
 # Module # 3 - Final evaluation exercise
 
 Hi! I'm Andrea Aguado :) and this repository was made to complete the final exercise of the Module 3 at the Adalab programming course.
@@ -18,11 +16,14 @@ During this evaluation I had to work with the contents of the `src/` folder, cre
 
 This project consists of a wiki page of Rick and Morty characters.
 
+![Page preview](./previewReadme.png)
+![Page preview](./previewReadme2.png)
+
 - You can navigate through the pages to see all the available characters cards or directly introduce the page number to go there.
 - Additionally, you can use the input to search directly by their name or use the selectors to filter by species and/or status.
 - You can find information extra info about them by clicking their cards.
 
-Hope you like my page, to see the final result visit my github pages -> http://beta.adalab.es/modulo-3-evaluacion-final-AndreaAguado/#/ 🤗
+Hope you like my page, to see the final result visit [my github pages](https://andreaaguado.github.io/wiki-rick-and-morty/) 🤗
 
 ## Quick Start Guide
 
